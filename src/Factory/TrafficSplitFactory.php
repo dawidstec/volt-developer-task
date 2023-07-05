@@ -32,7 +32,7 @@ class TrafficSplitFactory
             }
         }
 
-        if ($areWeightsEqual && $totalWeight === 100) {
+        if ($areWeightsEqual && ceil($totalWeight) === 100.0) {
             return $this->createEqualLoadTrafficSplit($paymentGateways);
         }
 
@@ -40,7 +40,7 @@ class TrafficSplitFactory
     }
 
     /** @param array<string, array{"weight":int}> $paymentGateways */
-    private function createWeightedTrafficSplit(array $paymentGateways) : TrafficSplitInterface
+    private function createWeightedTrafficSplit(array $paymentGateways): TrafficSplitInterface
     {
         return new WeightedTrafficSplit($paymentGateways);
     }

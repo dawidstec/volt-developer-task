@@ -23,3 +23,5 @@ exec:
 test:
 	docker-compose exec php vendor/bin/phpunit tests
 
+php-cs:
+	docker-compose exec php vendor/bin/php-cs-fixer fix src --verbose

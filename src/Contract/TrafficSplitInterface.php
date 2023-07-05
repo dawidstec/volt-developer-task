@@ -1,6 +1,7 @@
 <?php
 
 namespace VoltDeveloperTask\Contract;
+
 use VoltDeveloperTask\Model\Payment;
 
 interface TrafficSplitInterface
