@@ -9,14 +9,17 @@ stop:
 	docker-compose down
 
 composer-install:
-	docker-compose run --rm php composer install
+	docker-compose exec php composer install
 
 composer-require:
-	docker-compose run --rm php composer require $(package)
+	docker-compose exec php composer require $(package)
 
 composer-update:
-	docker-compose run --rm php composer update
+	docker-compose exec php composer update
 
 exec:
 	docker-compose exec php bash
+
+test:
+	docker-compose exec php vendor/bin/phpunit tests
 
