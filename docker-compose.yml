@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+    command: sh -c "while true; do sleep 3600; done"
