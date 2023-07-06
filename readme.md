@@ -19,6 +19,12 @@ I also created `Payment` class which is used in `handlePayment` method.
 In the project I also used factory pattern to create gateways.
 In case of running above classes you can see that it is not 100% accurate, but expected output is "visible" on 100 or 1000 runs.
 
+## Additional notes
+I know that class EqualLoadTrafficSplit is not necessary, because it can be done in
+WeightedTrafficSplit class, but I wanted to show that I can create two classes
+which are implementing the same interface and also that I can use
+factory pattern that returns classes implementing that interface and would make testing easier.
+
 ## Tests
 To run tests you need to run: 
 ```
