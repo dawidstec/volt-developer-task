@@ -2,7 +2,7 @@
 ## Envirement
 To correctly setup environment you need to run folowing commands:
 ```
-make install
+make build
 make start
 make composer-install
 ```
