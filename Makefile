@@ -25,3 +25,6 @@ test:
 
 php-cs:
 	docker-compose exec php vendor/bin/php-cs-fixer fix src --verbose
+
+php-stan:
+	docker-compose exec php vendor/bin/phpstan analyse src --level max

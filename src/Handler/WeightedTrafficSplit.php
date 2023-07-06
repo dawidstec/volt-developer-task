@@ -7,6 +7,7 @@ use VoltDeveloperTask\Model\Payment;
 
 class WeightedTrafficSplit implements TrafficSplitInterface
 {
+    /** @var array<string, array{"weight":float}> */
     protected array $paymentGateways;
 
     public function __construct(array $paymentGateways)
@@ -22,6 +23,11 @@ class WeightedTrafficSplit implements TrafficSplitInterface
         return $this->getRandomGateway($this->paymentGateways);
     }
 
+
+    /**
+     * @param array<string, array{"weight":float}> $weights
+     * @throws \Exception
+     */
     protected function getRandomGateway(array $weights): string
     {
         $rand = mt_rand(1, 100);

@@ -8,13 +8,13 @@ use VoltDeveloperTask\Handler\WeightedTrafficSplit;
 
 class TrafficSplitFactory
 {
-    /** @param array<string, array{"weight":int}> $paymentGateways */
+    /** @param array<string, array{"weight":float}> $paymentGateways */
     public function createTrafficSplit(array $paymentGateways): TrafficSplitInterface
     {
         return $this->determineTrafficSplitEnum($paymentGateways);
     }
 
-    /** @param array<string, array{"weight":int}> $paymentGateways */
+    /** @param array<string, array{"weight":float}> $paymentGateways */
     private function determineTrafficSplitEnum(array $paymentGateways): TrafficSplitInterface
     {
         $areWeightsEqual = true;
@@ -39,13 +39,13 @@ class TrafficSplitFactory
         return $this->createWeightedTrafficSplit($paymentGateways);
     }
 
-    /** @param array<string, array{"weight":int}> $paymentGateways */
+    /** @param array<string, array{"weight":float}> $paymentGateways */
     private function createWeightedTrafficSplit(array $paymentGateways): TrafficSplitInterface
     {
         return new WeightedTrafficSplit($paymentGateways);
     }
 
-    /** @param array<string, array{"weight":int}> $paymentGateways */
+    /** @param array<string, array{"weight":float}> $paymentGateways */
     private function createEqualLoadTrafficSplit(array $paymentGateways): TrafficSplitInterface
     {
         return new EqualLoadTrafficSplit($paymentGateways);

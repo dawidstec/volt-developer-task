@@ -12,6 +12,7 @@ class EqualLoadTrafficSplit extends WeightedTrafficSplit
         return $this->getRandomGateway($equalLoadWeights);
     }
 
+    /** @return array<string, array{"weight":float}>  */
     private function getEqualLoadWeights(): array
     {
         $equalLoadWeights = [];

@@ -27,5 +27,5 @@ $weightedGateways = [
     'Gateway3' => ['weight' => 15]
 ];
 
-$weightedSplit = $factory->createTrafficSplit($equalLoadGateways);
+$weightedSplit = $factory->createTrafficSplit($weightedGateways);
 echo $weightedSplit->handlePayment($payment) . PHP_EOL;
